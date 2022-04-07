@@ -8,7 +8,7 @@ console.log("Enter the numbers you want to make calculation on them")
 
 /*readline.question("Enter the two numbers separated with ',': ", (input) => {
     let numbers = input.split(",");
-    console.log(numbers);
+    console.log(numbers);m
     try {
         result = claculator.div(numbers[0], numbers[1])
         console.log(result)
