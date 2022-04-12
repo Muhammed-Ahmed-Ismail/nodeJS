@@ -1,5 +1,5 @@
 const fs = require('fs');
-fs.rename('./test.txt','./test.txt',(err)=>{
+fs.rename('./test.txt','./info.txt',(err)=>{
     if(err) throw err;
     console.log("done")
 })
@@ -23,6 +23,6 @@ fs.mkdir('./madebynode',{},(err => {
 }))
 
 //**************************************************************
-fs.rm('./test.txt',{},(err)=>{
+fs.rm('./info.txt',{},(err)=>{
     if(err) console.log(err)
 })
