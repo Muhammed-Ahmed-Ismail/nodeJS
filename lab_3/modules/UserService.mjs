@@ -1,10 +1,10 @@
-import * as fs from 'fs';
-import * as readLine from 'readline'
 
+import  {readFileSync,writeFileSync} from 'fs';
 export class UserService
 {
     addNewUser(userJson) {
-        let content=fs.readFileSync('./data/users.json');
+
+        let content=readFileSync('./data/users.json');
         let users=JSON.parse(content);
         let result= users.find((user)=> {
             return user.email===userJson.email;
@@ -14,7 +14,7 @@ export class UserService
         {
             console.log("usad")
             users.push(userJson)
-            fs.writeFileSync('./data/users.json',JSON.stringify(users))
+            writeFileSync('./data/users.json',JSON.stringify(users))
             return true;
         }
         else return false;
@@ -22,12 +22,12 @@ export class UserService
 
     validateUser(userJson)
     {
-        let content=fs.readFileSync('./data/users.json');
+        let content=readFileSync('./data/users.json');
         let users=JSON.parse(content);
         let result= users.find((regestereduser)=> {
             return regestereduser.email===userJson.email && regestereduser.password===userJson.password;
         })
-        return result !== undefined;
+        return [result !== undefined , result];
     }
 
 

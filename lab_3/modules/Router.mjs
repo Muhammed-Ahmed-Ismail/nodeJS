@@ -15,76 +15,89 @@ export class Router {
                 this.responseWithHomePage();
                 break;
             case '/signup':
-                this.extractData(this.signup)
+                this.signup()
                 break;
             case '/login':
-                this.extractData(this.login)
+                this.login()
                 break;
             default :
                 this.sendError()
-
         }
-        this.res.end();
+
     }
 
     responseWithHomePage() {
-        if (this.req.method === 'GET') {
+
             let home = fs.readFileSync('./static/welcome.html');
-            this.res.writeHead(200, {'Content-Type': 'text/html'})
-            this.res.write(home);
-        } else {
-            this.res.writeHead(405)
-        }
+            this.sendRespoonse(200,'text/html',home)
     }
 
-    signup(data) {
-        let result = this.userService.addNewUser(data)
-        console.log(result)
-        if (result) {
-            let msg = {
-                success: "user was added successfully"
+    signup() {
+
+            this.extractData().then((data)=>{
+                let result = this.userService.addNewUser(data)
+                console.log(result)
+                if (result) {
+                    let msg = {
+                        success: "user was added successfully"
+                    }
+                    this.sendRespoonse(200,'application/json',JSON.stringify(msg))
+                } else {
+                    let msg = {
+                        error: "This email is used already"
+                    }
+                    this.sendRespoonse(400,'application/json',JSON.stringify(msg))
             }
-            console.log(msg)
-            this.res.writeHead(200, {'Content-Type': 'application/json'})
-            this.res.write(JSON.stringify(msg))
-        } else {
-            let msg = {
-                error: "This email is used already"
-            }
-            console.log(JSON.stringify(msg))
-            console.log(this.res)
-            this.res.writeHead(400, {'Content-Type': 'application/json'})
-            this.res.write(JSON.stringify(msg))
-        }
+        })
     }
 
-    login(data) {
-        let result = this.userService.validateUser(data);
+    login() {
+        this.extractData().then((data)=>{
+            console.log('login')
 
-        if (result) {
-            this.res.writeHead(200, {'Content-Type': 'text/html'})
-            let page = fs.readFileSync('./static/profile.html')
-            //page.replace('{username}',data.name)
-            this.res.write(page)
-        }
+            let result = this.userService.validateUser(data);
+
+                console.log('login')
+            if (result[0]) {
+                let page = fs.readFileSync('./static/profile.html', 'utf8')
+                let respondPage=page.replace("{username}",result[1].name)
+                this.sendRespoonse(200,'text/html',respondPage)
+            }
+            else {
+                let msg={
+                    error: "invalid mail or password"
+                }
+                this.sendRespoonse(200,'application/json',JSON.stringify(msg))
+            }
+        })
+
+
     }
 
     sendError() {
         this.res.writeHead(404)
     }
 
-    extractData(dataHandler) {
-        let body = "";
+    extractData() {
+        return new Promise(resolve => {
 
-        this.req.on('data', (data) => {
-            body += data;
-        })
-        this.req.on('end', () => {
-            let data = JSON.parse(body);
-            // console.log("gggg"+data)
-            console.log(this)
-            dataHandler.call(this, data)
-        })
+            let body = "";
+
+            this.req.on('data', (data) => {
+                body += data;
+            }).on('end', () => {
+                let data = JSON.parse(body);
+                resolve(data)
+
+            });
+        });
+    }
+
+    sendRespoonse(status,type,response)
+    {
+        this.res.writeHead(status,{'Content-Type': type})
+        this.res.write(response)
+        this.res.end()
     }
 
 }
