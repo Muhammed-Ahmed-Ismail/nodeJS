@@ -37,6 +37,8 @@ export class Router {
             this.extractData().then((data)=>{
                 let result = this.userService.addNewUser(data)
                 console.log(result)
+                console.log("no44m")
+                console.log("fi")
                 if (result) {
                     let msg = {
                         success: "user was added successfully"

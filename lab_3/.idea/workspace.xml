@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e73b8f1d-a018-4d2d-b13f-c7ecc434ef14" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../lab_4/Utilities/FileHandler.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_4/Utilities/Server.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_4/app.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_4/assets/styles/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_4/controller/Controller.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_4/data/users.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_4/model/User.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_4/views/home.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_4/views/profile.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/Router.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Router.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/UserService.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/modules/UserService.mjs" afterDir="false" />
     </list>
@@ -39,8 +47,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="17.9.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="17.0.23" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab_4" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -70,7 +79,9 @@
       <workItem from="1649703331737" duration="1107000" />
       <workItem from="1649704467102" duration="6188000" />
       <workItem from="1649770669120" duration="1495000" />
-      <workItem from="1649776753168" duration="6466000" />
+      <workItem from="1649776753168" duration="7214000" />
+      <workItem from="1649792069335" duration="337000" />
+      <workItem from="1649851198634" duration="3906000" />
     </task>
     <servers />
   </component>

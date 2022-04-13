@@ -1,5 +1,5 @@
 
-import  {readFileSync,writeFileSync} from 'fs';
+import  {readFileSync,writeFileSync,accessSync} from 'fs';
 export class UserService
 {
     addNewUser(userJson) {
