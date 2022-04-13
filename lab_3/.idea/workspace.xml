@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e73b8f1d-a018-4d2d-b13f-c7ecc434ef14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../lab_4/Utilities/FileHandler.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab_4/Utilities/Server.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab_4/app.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab_4/assets/styles/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab_4/controller/Controller.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab_4/data/users.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab_4/model/User.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab_4/views/home.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab_4/views/profile.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Router.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Router.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/UserService.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/modules/UserService.mjs" afterDir="false" />
-    </list>
+    <list default="true" id="e73b8f1d-a018-4d2d-b13f-c7ecc434ef14" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
